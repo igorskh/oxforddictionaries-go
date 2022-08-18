@@ -20,6 +20,8 @@ type WordlistResults struct {
 	MatchType *string `json:"matchType,omitempty"`
 	// Name of region.
 	Region *string `json:"region,omitempty"`
+	// Search score
+	Score *float32 `json:"score,omitempty"`
 	// (DEPRECATED) A given written or spoken realisation of an entry, lowercased.
 	Word string `json:"word"`
 }
@@ -163,6 +165,38 @@ func (o *WordlistResults) SetRegion(v string) {
 	o.Region = &v
 }
 
+// GetScore returns the Score field value if set, zero value otherwise.
+func (o *WordlistResults) GetScore() float32 {
+	if o == nil || o.Score == nil {
+		var ret float32
+		return ret
+	}
+	return *o.Score
+}
+
+// GetScoreOk returns a tuple with the Score field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *WordlistResults) GetScoreOk() (*float32, bool) {
+	if o == nil || o.Score == nil {
+		return nil, false
+	}
+	return o.Score, true
+}
+
+// HasScore returns a boolean if a field has been set.
+func (o *WordlistResults) HasScore() bool {
+	if o != nil && o.Score != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetScore gets a reference to the given float32 and assigns it to the Score field.
+func (o *WordlistResults) SetScore(v float32) {
+	o.Score = &v
+}
+
 // GetWord returns the Word field value
 func (o *WordlistResults) GetWord() string {
 	if o == nil {
@@ -200,6 +234,9 @@ func (o WordlistResults) MarshalJSON() ([]byte, error) {
 	}
 	if o.Region != nil {
 		toSerialize["region"] = o.Region
+	}
+	if o.Score != nil {
+		toSerialize["score"] = o.Score
 	}
 	if true {
 		toSerialize["word"] = o.Word

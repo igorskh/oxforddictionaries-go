@@ -12740,12 +12740,14 @@ components:
         metadata:
           total: total
         results:
-        - matchType: matchType
+        - score: 0.8008282
+          matchType: matchType
           matchString: matchString
           id: id
           region: region
           word: word
-        - matchType: matchType
+        - score: 0.8008282
+          matchType: matchType
           matchString: matchString
           id: id
           region: region
@@ -13725,6 +13727,7 @@ components:
     Wordlist_results:
       description: Description of found word
       example:
+        score: 0.8008282
         matchType: matchType
         matchString: matchString
         id: id
@@ -13741,6 +13744,10 @@ components:
         region:
           description: Name of region.
           type: string
+        score:
+          description: Search score
+          format: float
+          type: number
         word:
           description: (DEPRECATED) A given written or spoken realisation of an entry,
             lowercased.

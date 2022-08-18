@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **MatchString** | Pointer to **string** |  | [optional] 
 **MatchType** | Pointer to **string** |  | [optional] 
 **Region** | Pointer to **string** | Name of region. | [optional] 
+**Score** | Pointer to **float32** | Search score | [optional] 
 **Word** | **string** | (DEPRECATED) A given written or spoken realisation of an entry, lowercased. | 
 
 ## Methods
@@ -123,6 +124,31 @@ SetRegion sets Region field to given value.
 `func (o *WordlistResults) HasRegion() bool`
 
 HasRegion returns a boolean if a field has been set.
+
+### GetScore
+
+`func (o *WordlistResults) GetScore() float32`
+
+GetScore returns the Score field if non-nil, zero value otherwise.
+
+### GetScoreOk
+
+`func (o *WordlistResults) GetScoreOk() (*float32, bool)`
+
+GetScoreOk returns a tuple with the Score field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetScore
+
+`func (o *WordlistResults) SetScore(v float32)`
+
+SetScore sets Score field to given value.
+
+### HasScore
+
+`func (o *WordlistResults) HasScore() bool`
+
+HasScore returns a boolean if a field has been set.
 
 ### GetWord
 
